@@ -34,20 +34,30 @@ _O projeto poderá ser expandido futuramente com novas análises e aprofundament
 
 ## US English
 
-Inbound pallet analysis project, based on real-world operations, using processed and anonymized data.
+Inbound pallet analysis project based on real-world operations, using processed and anonymized data.
 
 ## Objectives:
 
-Analyze the operational performance of the inbound process, such as:
- - pallet volume per operator
- - volume per entry type
- - productivity metrics
+Analyze the operational performance of the inbound process, focusing on:
+ - pallet volume and productivity (trucks waiting time) per operator;
+ - volume and efficiency per vehicle type;
+ - main commercial partners and gaps between phisically received and system-recorded pallets.
+
+
+## Key insights:
+ - High operational concentration among the top 3 personnel responsible for pallet receiving with greater activity during 2nd shift;
+ - Average unloading time ranges between 60 and 75 minutes, indicating a stable operational pattern, although there is inneficiencies can be addressed;
+ - Side-loading vehicles handle lower volume per operationbut have shorter waiting times, while box trucks carry higher loads with significantly longer waiting times;
+ - Discrepancies between physically received pallets and system records are generally low, with approximately 5 out of every 6 partners showing gaps below 0.5%.
 
 ## Technologies used
 
  - PostgreSQL
  - SQL
 
+
 ## Current status
 
-_Under development (early exploratory analysis phase)_
+_Finished project (1st version), inlcuding data modeling and manipulation focused on inbound logistics operations, as well as the generation of business-oriented insights._
+
+_The project may be expanded in the future with new, deeper analisys under different approaches._
