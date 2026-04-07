@@ -1,11 +1,11 @@
 -- análise 1: volume por responsável
 select
-	resp_descarga.nome as responsavel,
+	rd.nome as responsavel,
 	count(numero_laudo) as qtde_laudos,
 	sum(qtde_fisico) as qtde_pallets
 from
-	recebimento
-	join resp_descarga on recebimento.id_resp_descarga = resp_descarga.id_resp_descarga
+	recebimento r
+	join resp_descarga rd on r.id_resp_descarga = rd.id_resp_descarga
 group by
 	responsavel
 order by
@@ -87,3 +87,15 @@ order by
 	percentual_qtde_pallets desc;
 
 -- análise 4: maiores parceiros e seus gaps entre físico e sistema
+select
+	p.nome as parceiro,
+	sum(qtde_fisico - qtde_sistema) as gap,
+	sum(r.qtde_fisico) as "recebido físico",
+	sum(r.qtde_sistema) as "cadastrado em sistema"
+from
+	recebimento r
+	join parceiro p on p.id_parceiro = r.id_parceiro
+group by
+	p.nome
+order by
+	gap desc;
